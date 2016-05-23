@@ -1,0 +1,14 @@
+﻿@model IEnumerable<System.Security.Claims.Claim>
+
+<div class="jumbotron">
+    <h1>You're logged in!</h1>
+    @foreach (var claim in Model)
+    {
+        <div>
+            <p><strong>@claim.Type</strong></p>
+            <p>
+                @claim.Value
+            </p>
+        </div>
+    }
+</div>

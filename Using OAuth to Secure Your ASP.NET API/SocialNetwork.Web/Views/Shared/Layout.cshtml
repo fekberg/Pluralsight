@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SocialNetwork</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Filip Ekberg">
+
+    <!-- BOOTSTRAP TEMPLATE: http://getbootstrap.com/2.3.2/examples/marketing-narrow.html -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        .container-narrow {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+            .container-narrow > hr {
+                margin: 30px 0;
+            }
+
+        .jumbotron {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+            .jumbotron h1 {
+                font-size: 72px;
+                line-height: 1;
+            }
+
+            .jumbotron .btn {
+                font-size: 21px;
+                padding: 14px 24px;
+            }
+
+        .marketing {
+            margin: 60px 0;
+        }
+
+            .marketing p + h4 {
+                margin-top: 28px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-narrow">
+
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/private">Profile</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/logout">Logout</a></li>
+                }
+            </ul>
+            <h3 class="muted">SocialNetwork</h3>
+        </div>
+
+        <hr>
+
+        @RenderBody()
+
+        <hr>
+
+        <div class="footer">
+            <p>&copy; SocialNetwork 1337</p>
+        </div>
+
+    </div>
+</body>
+</html>
